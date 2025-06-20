@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #322030;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.title-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 80px;
+    z-index: 10;
+}
+
+.title-word {
+    display: flex;
+    align-items: center;
+}
+
+.title-img {
+    height: 80px;
+    width: auto;
+    filter: brightness(0) saturate(100%) invert(85%) sepia(8%) saturate(1234%) hue-rotate(64deg) brightness(95%) contrast(89%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.title-img:hover {
+    transform: scale(1.05);
+    filter: brightness(0) saturate(100%) invert(85%) sepia(8%) saturate(1234%) hue-rotate(64deg) brightness(110%) contrast(89%) drop-shadow(0 0 10px #D5E6D4);
+}
+
+.character-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+}
+
+.main-character {
+    height: 200px;
+    width: auto;
+    filter: brightness(0) saturate(100%) invert(85%) sepia(8%) saturate(1234%) hue-rotate(64deg) brightness(95%) contrast(89%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: float 2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.main-character:hover {
+    transform: scale(1.1);
+    filter: brightness(0) saturate(100%) invert(85%) sepia(8%) saturate(1234%) hue-rotate(64deg) brightness(110%) contrast(89%) drop-shadow(0 0 15px #D5E6D4);
+}
+
+/* 动画效果 */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .title-section {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 60px;
+    }
+    
+    .title-img {
+        height: 60px;
+    }
+    
+    .main-character {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-img {
+        height: 50px;
+    }
+    
+    .main-character {
+        height: 120px;
+    }
+}
